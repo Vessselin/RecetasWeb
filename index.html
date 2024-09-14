@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  
+  <!-- Bootstrap 5 para un diseño más moderno y adaptativo -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts para tipografía moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos personalizados -->
+  <style>
+    body {
+      background-color: #f4f4f4;
+      font-family: 'Montserrat', sans-serif;
+      padding-top: 80px;
+    }
+
+    /* Barra de navegación personalizada */
+    .navbar {
+      background-color: #007bff;
+    }
+
+    .navbar-brand {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #ffffff !important;
+    }
+
+    /* Estilos del encabezado principal */
+    h1 {
+      color: #007bff;
+      font-size: 2.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      color: #6c757d;
+      font-size: 1.1rem;
+    }
+
+    /* Estilos para el botón de búsqueda */
+    #search-button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+    }
+
+    #search-button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Estilos para las tarjetas de recetas */
+    .card {
+      transition: transform 0.2s ease-in-out;
+      border: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      color: #333;
+    }
+
+    .card-img-top {
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+
+    /* Modal personalizado */
+    .modal-content {
+      border-radius: 15px;
+    }
+
+    .modal-header {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    .modal-title {
+      font-size: 1.5rem;
+    }
+
+    .modal-footer button {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    .modal-footer button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+
+  <title>Recetas de Cocina</title>
+</head>
+
+<body>
+  <!-- Barra de navegación con fondo azul -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Recetas de Cocina</a>
+    </div>
+  </nav>
+
+  <!-- Contenedor principal -->
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-center">
+        <!-- Encabezado principal e instrucciones -->
+        <h1>Encuentra la Receta Perfecta</h1>
+        <p>Ingresa un ingrediente (en inglés) y descubre qué puedes cocinar hoy.</p>
+        <div class="input-group mb-3">
+          <!-- Campo de entrada para búsqueda -->
+          <input type="text" class="form-control" placeholder="Example: Rice, Chicken, Potato, etc." id="search-input" />
+          <button class="btn" id="search-button" type="button">Buscar</button>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- Sección de resultados de recetas -->
+    <div class="row" id="recipe-list"></div>
+  </div>
+
+  <!-- Modal para los detalles de la receta -->
+  <div class="modal fade" id="recipeModal" tabindex="-1" role="dialog" aria-labelledby="recipeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- Título del modal -->
+          <h5 class="modal-title" id="recipeModalLabel">Detalles de la Receta</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Contenido del modal -->
+          <h5 id="recipe-title"></h5>
+          <img id="recipe-image" class="img-fluid mb-3" src="" alt="Imagen de la receta" />
+          <p id="recipe-instructions"></p>
+        </div>
+        <div class="modal-footer">
+          <!-- Botón para cerrar el modal -->
+          <button type="button" class="btn" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bibliotecas JavaScript de Bootstrap y jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Archivo JavaScript personalizado -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
